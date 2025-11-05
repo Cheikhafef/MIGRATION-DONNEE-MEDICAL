@@ -1,0 +1,4 @@
+#Librairies nécessaires pour le script d'import CSV vers MongoDB
+
+pandas==2.3.2         # Pour la lecture et la manipulation du fichier CSV
+pymongo==4.15.3      # Pour la connexion et l'insertion dans MongoDB
