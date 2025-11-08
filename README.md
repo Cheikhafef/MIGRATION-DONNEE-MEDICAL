@@ -70,7 +70,7 @@ Les conteneurs communiquent via le réseau interne `mongo-net`.
 
 ---
 
-## 🤪 Tests d’intégrité
+##  Tests d’intégrité
 
 Avant et après la migration, le script `test_integrite.py` :
 
@@ -86,7 +86,7 @@ python test_integrite.py
 
 ---
 
-## 🦯 Opérations CRUD
+##  Opérations CRUD
 
 Le script `crud_operations.py` permet d’effectuer des opérations sur la base :
 
@@ -104,19 +104,7 @@ collection.update_one({"Name": "Jean Dupont"}, {"$set": {"Age": 46}})
 collection.delete_one({"Name": "Jean Dupont"})
 ```
 
----
-
-## ☁️ Déploiement sur AWS (recherche)
-
-| Service AWS           | Rôle                            | Avantage                      |
-| --------------------- | ------------------------------- | ----------------------------- |
-| **Amazon ECS**        | Exécution des conteneurs Docker | Facile à déployer et scalable |
-| **Amazon DocumentDB** | Service compatible MongoDB      | Haute disponibilité           |
-| **Amazon S3**         | Stockage du dataset CSV         | Fiable et économique          |
-
----
-
-## 🗾 Authentification MongoDB
+##  Authentification MongoDB
 
 Le service MongoDB est protégé par un utilisateur et mot de passe :
 
@@ -147,7 +135,7 @@ environment:
 
 ---
 
-## 🧑‍💻 Auteur
+## Auteur
 
 * **Nom :** [CHEIKH afef]
 * **Formation :** Big Data / DevOps - France Travail
@@ -155,7 +143,7 @@ environment:
 
 ---
 
-## 🏁 Commandes utiles
+##  Commandes utiles
 
 ```bash
 # Lancer la migration
@@ -171,4 +159,3 @@ python crud_operations.py
 docker-compose up --build
 ```
 
----
