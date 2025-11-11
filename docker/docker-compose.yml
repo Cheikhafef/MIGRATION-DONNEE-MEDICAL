@@ -1,0 +1,37 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_container
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: medical_data
+    volumes:
+      - mongodb_data:/data/db
+      - ./init:/docker-entrypoint-initdb.d
+    networks:
+      - mongo-net
+
+  migration:
+    build: .
+    container_name: migration_container
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+      - csv_data:/app/data
+    environment:
+      MONGO_URI: "mongodb://admin:admin123@mongodb:27017/"
+    networks:
+      - mongo-net
+    command: ["python", "migrationscript.py"]
+
+volumes:
+  mongodb_data:
+  csv_data:
+
+networks:
+  mongo-net:
