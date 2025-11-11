@@ -24,7 +24,7 @@ services:
       - .:/app
       - csv_data:/app/data
     environment:
-      MONGO_URI: "mongodb://admin:admin123@mongodb:27017/"
+      MONGO_URI: "mongodb://${MONGO_ADMIN}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/"
     networks:
       - mongo-net
     command: ["python", "migrationscript.py"]
