@@ -69,7 +69,17 @@ docker-compose up --build
 Les conteneurs communiquent via le réseau interne `mongo-net`.
 
 ---
+### 💾 Configuration avec fichier `.env`
 
+Pour éviter de mettre les identifiants directement dans le fichier `docker-compose.yml`, on peut les définir dans un fichier `.env`.
+
+Crée un fichier nommé `.env` à la racine du projet avec les informations suivantes :
+
+```bash
+# Variables MongoDB
+MONGO_ADMIN=admin
+MONGO_PASSWORD=admin123
+MONGO_URI=mongodb://${MONGO_ADMIN}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/
 ##  Tests d’intégrité
 
 Avant et après la migration, le script `test_integrite.py` :
