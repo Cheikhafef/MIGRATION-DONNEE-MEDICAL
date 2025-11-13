@@ -16,17 +16,28 @@
 ## 🧱 Architecture du projet
 
 ```
-migration-project/
+MIGRATION-DONNEE-MEDICAL/
 │
-├── docker-compose.yml         # Déploie MongoDB et le script Python dans deux conteneurs
-├── Dockerfile                 # Image Python avec les dépendances
-├── migrationscript.py         # Script principal de migration CSV → MongoDB
-├── crud_operations.py         # Script CRUD (Create, Read, Update, Delete)
-├── test_integrite.py          # Script de test d’intégrité des données
-├── requirements.txt           # Liste des dépendances Python
-├── healthcare_dataset.csv     # Dataset médical fourni
-├── mongodb.md                 # Documentation technique de la base
-└── README.md                  # Documentation du projet (ce fichier)
+├── data/
+│   └── healthcare_dataset.csv        # Jeu de données médicales à migrer
+│
+├── docker/
+│   ├── docker-compose.yml            # Configuration des services Docker (MongoDB + migration)
+│   └── Dockerfile                    # Image pour le conteneur de migration
+│
+├── docs/
+│   └── mongodb.md                    # Documentation sur l’installation et la configuration de 
+│                                        MongoDB
+├── python/
+│   ├── crud_operations.py            # Fonctions CRUD (Create, Read, Update, Delete) pour MongoDB
+│   ├── main.py                       # Point d’entrée principal du script Python
+│   ├── migrationscript.py            # Script de migration des données CSV vers MongoDB
+│   └── test_integrite.py             # Tests d’intégrité et de cohérence des données
+│
+├── .gitignore                        # Fichiers/dossiers à exclure du versionnement
+├── README.md                         # Documentation principale du projet
+└── requirements.txt                  # Dépendances Python à installer
+
 ```
 
 ---
