@@ -79,6 +79,8 @@ Crée un fichier nommé `.env` à la racine du projet avec les informations suiv
 # Variables MongoDB
 MONGO_ADMIN=${MONGO_ADMIN}
 MONGO_PASSWORD=${MONGO_PASSWORD}
+MONGO_HOST=${MONGO_HOST}
+MONGO_PORT=${MONGO_PORT}
 MONGO_URI=mongodb://${MONGO_ADMIN}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/
 
 ```
