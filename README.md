@@ -134,18 +134,18 @@ collection.delete_one({"Name": "Jean Dupont"})
 
 Le service MongoDB est protégé par un utilisateur et mot de passe :
 
-| Paramètre        | Valeur         |
-| ---------------- | -------------- |
-| **Utilisateur**  | `admin`        |
-| **Mot de passe** | `admin123`     |
-| **Base**         | `medical_data` |
+| Paramètre        | Valeur              |
+| ---------------- | ------------------  |
+| **Utilisateur**  | `${MONGO_ADMIN}`    |
+| **Mot de passe** | `${MONGO_PASSWORD}` |
+| **Base**         | `medical_data`      |
 
 Ces identifiants sont définis dans `docker-compose.yml` :
 
 ```yaml
 environment:
-  MONGO_INITDB_ROOT_USERNAME: admin
-  MONGO_INITDB_ROOT_PASSWORD: admin123
+  MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN}
+  MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
   MONGO_INITDB_DATABASE: medical_data
 ```
 
@@ -164,8 +164,7 @@ environment:
 ## Auteur
 
 * **Nom :** [CHEIKH afef]
-* **Formation :** Big Data / DevOps - France Travail
-* **GitHub :** [https://github.com/Cheikhafef/migration-donnee-medicale]
+* **GitHub :** [https://github.com/Cheikhafef/MIGRATION-DONNEE-MEDICAL]
 
 ---
 
